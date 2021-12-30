@@ -1,0 +1,1 @@
+/usr/bin/arm-linux-gnueabi-g++ -static -DNOSSL -g CMakeFiles/single_source.dir/config.cpp.o CMakeFiles/single_source.dir/libftp/ftplib.cpp.o -o single_source 
