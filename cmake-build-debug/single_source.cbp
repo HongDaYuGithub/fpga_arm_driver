@@ -80,16 +80,28 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/hongdayu/single_source/config.cpp">
+		<Unit filename="/home/hongdayu/single_source/fpga/7035/zynq7035.cpp">
 			<Option target="single_source"/>
 		</Unit>
-		<Unit filename="/home/hongdayu/single_source/config.h">
+		<Unit filename="/home/hongdayu/single_source/fpga/7035/zynq7035.h">
+			<Option target="single_source"/>
+		</Unit>
+		<Unit filename="/home/hongdayu/single_source/fpga/Fpga.cpp">
+			<Option target="single_source"/>
+		</Unit>
+		<Unit filename="/home/hongdayu/single_source/fpga/Fpga.h">
+			<Option target="single_source"/>
+		</Unit>
+		<Unit filename="/home/hongdayu/single_source/ftp.cpp">
 			<Option target="single_source"/>
 		</Unit>
 		<Unit filename="/home/hongdayu/single_source/libftp/ftplib.cpp">
 			<Option target="single_source"/>
 		</Unit>
 		<Unit filename="/home/hongdayu/single_source/libftp/ftplib.h">
+			<Option target="single_source"/>
+		</Unit>
+		<Unit filename="/home/hongdayu/single_source/main.cpp">
 			<Option target="single_source"/>
 		</Unit>
 		<Unit filename="/home/hongdayu/single_source/CMakeLists.txt">

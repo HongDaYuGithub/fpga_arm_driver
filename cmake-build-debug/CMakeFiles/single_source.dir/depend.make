@@ -3,4 +3,8 @@
 
 CMakeFiles/single_source.dir/config.cpp.o: ../config.cpp
 CMakeFiles/single_source.dir/config.cpp.o: ../config.h
+CMakeFiles/single_source.dir/config.cpp.o: ../libftp/ftplib.h
+
+CMakeFiles/single_source.dir/libftp/ftplib.cpp.o: ../libftp/ftplib.cpp
+CMakeFiles/single_source.dir/libftp/ftplib.cpp.o: ../libftp/ftplib.h
 

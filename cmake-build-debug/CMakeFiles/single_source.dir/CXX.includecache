@@ -6,11 +6,45 @@
 
 #IncludeRegexTransform: 
 
-/home/hongdayu/single_source/config.cpp
-iostream
+/home/hongdayu/single_source/libftp/ftplib.cpp
+openssl/ssl.h
 -
-config.h
-/home/hongdayu/single_source/config.h
+ftplib.h
+/home/hongdayu/single_source/libftp/ftplib.h
+openssl/ssl.h
+-
+windows.h
+-
+winsock.h
+-
+sys/socket.h
+-
+netinet/in.h
+-
+netdb.h
+-
+arpa/inet.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+errno.h
+-
+ctype.h
+-
+sys/types.h
+-
 
-/home/hongdayu/single_source/config.h
+/home/hongdayu/single_source/libftp/ftplib.h
+time.h
+-
+unistd.h
+-
+sys/time.h
+-
+sys/types.h
+-
 
