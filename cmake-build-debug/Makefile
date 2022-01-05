@@ -130,71 +130,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named single_source
+# Target rules for targets named 5g_ssrc
 
 # Build rule for target.
-single_source: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 single_source
-.PHONY : single_source
+5g_ssrc: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 5g_ssrc
+.PHONY : 5g_ssrc
 
 # fast build rule for target.
-single_source/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/single_source.dir/build.make CMakeFiles/single_source.dir/build
-.PHONY : single_source/fast
-
-fpga/7035/zynq7035.o: fpga/7035/zynq7035.cpp.o
-
-.PHONY : fpga/7035/zynq7035.o
-
-# target to build an object file
-fpga/7035/zynq7035.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/single_source.dir/build.make CMakeFiles/single_source.dir/fpga/7035/zynq7035.cpp.o
-.PHONY : fpga/7035/zynq7035.cpp.o
-
-fpga/7035/zynq7035.i: fpga/7035/zynq7035.cpp.i
-
-.PHONY : fpga/7035/zynq7035.i
-
-# target to preprocess a source file
-fpga/7035/zynq7035.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/single_source.dir/build.make CMakeFiles/single_source.dir/fpga/7035/zynq7035.cpp.i
-.PHONY : fpga/7035/zynq7035.cpp.i
-
-fpga/7035/zynq7035.s: fpga/7035/zynq7035.cpp.s
-
-.PHONY : fpga/7035/zynq7035.s
-
-# target to generate assembly for a file
-fpga/7035/zynq7035.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/single_source.dir/build.make CMakeFiles/single_source.dir/fpga/7035/zynq7035.cpp.s
-.PHONY : fpga/7035/zynq7035.cpp.s
-
-fpga/Fpga.o: fpga/Fpga.cpp.o
-
-.PHONY : fpga/Fpga.o
-
-# target to build an object file
-fpga/Fpga.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/single_source.dir/build.make CMakeFiles/single_source.dir/fpga/Fpga.cpp.o
-.PHONY : fpga/Fpga.cpp.o
-
-fpga/Fpga.i: fpga/Fpga.cpp.i
-
-.PHONY : fpga/Fpga.i
-
-# target to preprocess a source file
-fpga/Fpga.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/single_source.dir/build.make CMakeFiles/single_source.dir/fpga/Fpga.cpp.i
-.PHONY : fpga/Fpga.cpp.i
-
-fpga/Fpga.s: fpga/Fpga.cpp.s
-
-.PHONY : fpga/Fpga.s
-
-# target to generate assembly for a file
-fpga/Fpga.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/single_source.dir/build.make CMakeFiles/single_source.dir/fpga/Fpga.cpp.s
-.PHONY : fpga/Fpga.cpp.s
+5g_ssrc/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/5g_ssrc.dir/build.make CMakeFiles/5g_ssrc.dir/build
+.PHONY : 5g_ssrc/fast
 
 ftp.o: ftp.cpp.o
 
@@ -202,7 +148,7 @@ ftp.o: ftp.cpp.o
 
 # target to build an object file
 ftp.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/single_source.dir/build.make CMakeFiles/single_source.dir/ftp.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/5g_ssrc.dir/build.make CMakeFiles/5g_ssrc.dir/ftp.cpp.o
 .PHONY : ftp.cpp.o
 
 ftp.i: ftp.cpp.i
@@ -211,7 +157,7 @@ ftp.i: ftp.cpp.i
 
 # target to preprocess a source file
 ftp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/single_source.dir/build.make CMakeFiles/single_source.dir/ftp.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/5g_ssrc.dir/build.make CMakeFiles/5g_ssrc.dir/ftp.cpp.i
 .PHONY : ftp.cpp.i
 
 ftp.s: ftp.cpp.s
@@ -220,7 +166,7 @@ ftp.s: ftp.cpp.s
 
 # target to generate assembly for a file
 ftp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/single_source.dir/build.make CMakeFiles/single_source.dir/ftp.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/5g_ssrc.dir/build.make CMakeFiles/5g_ssrc.dir/ftp.cpp.s
 .PHONY : ftp.cpp.s
 
 libftp/ftplib.o: libftp/ftplib.cpp.o
@@ -229,7 +175,7 @@ libftp/ftplib.o: libftp/ftplib.cpp.o
 
 # target to build an object file
 libftp/ftplib.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/single_source.dir/build.make CMakeFiles/single_source.dir/libftp/ftplib.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/5g_ssrc.dir/build.make CMakeFiles/5g_ssrc.dir/libftp/ftplib.cpp.o
 .PHONY : libftp/ftplib.cpp.o
 
 libftp/ftplib.i: libftp/ftplib.cpp.i
@@ -238,7 +184,7 @@ libftp/ftplib.i: libftp/ftplib.cpp.i
 
 # target to preprocess a source file
 libftp/ftplib.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/single_source.dir/build.make CMakeFiles/single_source.dir/libftp/ftplib.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/5g_ssrc.dir/build.make CMakeFiles/5g_ssrc.dir/libftp/ftplib.cpp.i
 .PHONY : libftp/ftplib.cpp.i
 
 libftp/ftplib.s: libftp/ftplib.cpp.s
@@ -247,7 +193,7 @@ libftp/ftplib.s: libftp/ftplib.cpp.s
 
 # target to generate assembly for a file
 libftp/ftplib.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/single_source.dir/build.make CMakeFiles/single_source.dir/libftp/ftplib.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/5g_ssrc.dir/build.make CMakeFiles/5g_ssrc.dir/libftp/ftplib.cpp.s
 .PHONY : libftp/ftplib.cpp.s
 
 main.o: main.cpp.o
@@ -256,7 +202,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/single_source.dir/build.make CMakeFiles/single_source.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/5g_ssrc.dir/build.make CMakeFiles/5g_ssrc.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -265,7 +211,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/single_source.dir/build.make CMakeFiles/single_source.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/5g_ssrc.dir/build.make CMakeFiles/5g_ssrc.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -274,8 +220,35 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/single_source.dir/build.make CMakeFiles/single_source.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/5g_ssrc.dir/build.make CMakeFiles/5g_ssrc.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+zynq7035.o: zynq7035.cpp.o
+
+.PHONY : zynq7035.o
+
+# target to build an object file
+zynq7035.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/5g_ssrc.dir/build.make CMakeFiles/5g_ssrc.dir/zynq7035.cpp.o
+.PHONY : zynq7035.cpp.o
+
+zynq7035.i: zynq7035.cpp.i
+
+.PHONY : zynq7035.i
+
+# target to preprocess a source file
+zynq7035.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/5g_ssrc.dir/build.make CMakeFiles/5g_ssrc.dir/zynq7035.cpp.i
+.PHONY : zynq7035.cpp.i
+
+zynq7035.s: zynq7035.cpp.s
+
+.PHONY : zynq7035.s
+
+# target to generate assembly for a file
+zynq7035.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/5g_ssrc.dir/build.make CMakeFiles/5g_ssrc.dir/zynq7035.cpp.s
+.PHONY : zynq7035.cpp.s
 
 # Help Target
 help:
@@ -285,13 +258,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... single_source"
-	@echo "... fpga/7035/zynq7035.o"
-	@echo "... fpga/7035/zynq7035.i"
-	@echo "... fpga/7035/zynq7035.s"
-	@echo "... fpga/Fpga.o"
-	@echo "... fpga/Fpga.i"
-	@echo "... fpga/Fpga.s"
+	@echo "... 5g_ssrc"
 	@echo "... ftp.o"
 	@echo "... ftp.i"
 	@echo "... ftp.s"
@@ -301,6 +268,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... zynq7035.o"
+	@echo "... zynq7035.i"
+	@echo "... zynq7035.s"
 .PHONY : help
 
 

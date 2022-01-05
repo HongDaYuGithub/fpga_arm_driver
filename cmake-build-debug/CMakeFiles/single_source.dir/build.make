@@ -102,35 +102,22 @@ CMakeFiles/single_source.dir/libftp/ftplib.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/single_source.dir/libftp/ftplib.cpp.s"
 	/usr/bin/arm-linux-gnueabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hongdayu/single_source/libftp/ftplib.cpp -o CMakeFiles/single_source.dir/libftp/ftplib.cpp.s
 
-CMakeFiles/single_source.dir/fpga/Fpga.cpp.o: CMakeFiles/single_source.dir/flags.make
-CMakeFiles/single_source.dir/fpga/Fpga.cpp.o: ../fpga/Fpga.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hongdayu/single_source/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/single_source.dir/fpga/Fpga.cpp.o"
-	/usr/bin/arm-linux-gnueabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/single_source.dir/fpga/Fpga.cpp.o -c /home/hongdayu/single_source/fpga/Fpga.cpp
+CMakeFiles/single_source.dir/zynq7035.cpp.o: CMakeFiles/single_source.dir/flags.make
+CMakeFiles/single_source.dir/zynq7035.cpp.o: ../zynq7035.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hongdayu/single_source/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/single_source.dir/zynq7035.cpp.o"
+	/usr/bin/arm-linux-gnueabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/single_source.dir/zynq7035.cpp.o -c /home/hongdayu/single_source/zynq7035.cpp
 
-CMakeFiles/single_source.dir/fpga/Fpga.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/single_source.dir/fpga/Fpga.cpp.i"
-	/usr/bin/arm-linux-gnueabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hongdayu/single_source/fpga/Fpga.cpp > CMakeFiles/single_source.dir/fpga/Fpga.cpp.i
+CMakeFiles/single_source.dir/zynq7035.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/single_source.dir/zynq7035.cpp.i"
+	/usr/bin/arm-linux-gnueabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hongdayu/single_source/zynq7035.cpp > CMakeFiles/single_source.dir/zynq7035.cpp.i
 
-CMakeFiles/single_source.dir/fpga/Fpga.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/single_source.dir/fpga/Fpga.cpp.s"
-	/usr/bin/arm-linux-gnueabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hongdayu/single_source/fpga/Fpga.cpp -o CMakeFiles/single_source.dir/fpga/Fpga.cpp.s
-
-CMakeFiles/single_source.dir/fpga/7035/zynq7035.cpp.o: CMakeFiles/single_source.dir/flags.make
-CMakeFiles/single_source.dir/fpga/7035/zynq7035.cpp.o: ../fpga/7035/zynq7035.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hongdayu/single_source/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/single_source.dir/fpga/7035/zynq7035.cpp.o"
-	/usr/bin/arm-linux-gnueabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/single_source.dir/fpga/7035/zynq7035.cpp.o -c /home/hongdayu/single_source/fpga/7035/zynq7035.cpp
-
-CMakeFiles/single_source.dir/fpga/7035/zynq7035.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/single_source.dir/fpga/7035/zynq7035.cpp.i"
-	/usr/bin/arm-linux-gnueabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hongdayu/single_source/fpga/7035/zynq7035.cpp > CMakeFiles/single_source.dir/fpga/7035/zynq7035.cpp.i
-
-CMakeFiles/single_source.dir/fpga/7035/zynq7035.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/single_source.dir/fpga/7035/zynq7035.cpp.s"
-	/usr/bin/arm-linux-gnueabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hongdayu/single_source/fpga/7035/zynq7035.cpp -o CMakeFiles/single_source.dir/fpga/7035/zynq7035.cpp.s
+CMakeFiles/single_source.dir/zynq7035.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/single_source.dir/zynq7035.cpp.s"
+	/usr/bin/arm-linux-gnueabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hongdayu/single_source/zynq7035.cpp -o CMakeFiles/single_source.dir/zynq7035.cpp.s
 
 CMakeFiles/single_source.dir/ftp.cpp.o: CMakeFiles/single_source.dir/flags.make
 CMakeFiles/single_source.dir/ftp.cpp.o: ../ftp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hongdayu/single_source/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/single_source.dir/ftp.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hongdayu/single_source/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/single_source.dir/ftp.cpp.o"
 	/usr/bin/arm-linux-gnueabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/single_source.dir/ftp.cpp.o -c /home/hongdayu/single_source/ftp.cpp
 
 CMakeFiles/single_source.dir/ftp.cpp.i: cmake_force
@@ -145,8 +132,7 @@ CMakeFiles/single_source.dir/ftp.cpp.s: cmake_force
 single_source_OBJECTS = \
 "CMakeFiles/single_source.dir/main.cpp.o" \
 "CMakeFiles/single_source.dir/libftp/ftplib.cpp.o" \
-"CMakeFiles/single_source.dir/fpga/Fpga.cpp.o" \
-"CMakeFiles/single_source.dir/fpga/7035/zynq7035.cpp.o" \
+"CMakeFiles/single_source.dir/zynq7035.cpp.o" \
 "CMakeFiles/single_source.dir/ftp.cpp.o"
 
 # External object files for target single_source
@@ -154,12 +140,11 @@ single_source_EXTERNAL_OBJECTS =
 
 single_source: CMakeFiles/single_source.dir/main.cpp.o
 single_source: CMakeFiles/single_source.dir/libftp/ftplib.cpp.o
-single_source: CMakeFiles/single_source.dir/fpga/Fpga.cpp.o
-single_source: CMakeFiles/single_source.dir/fpga/7035/zynq7035.cpp.o
+single_source: CMakeFiles/single_source.dir/zynq7035.cpp.o
 single_source: CMakeFiles/single_source.dir/ftp.cpp.o
 single_source: CMakeFiles/single_source.dir/build.make
 single_source: CMakeFiles/single_source.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hongdayu/single_source/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable single_source"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hongdayu/single_source/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable single_source"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/single_source.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

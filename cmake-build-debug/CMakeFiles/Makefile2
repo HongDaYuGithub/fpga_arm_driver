@@ -72,7 +72,7 @@ CMAKE_BINARY_DIR = /home/hongdayu/single_source/cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/single_source.dir/all
+all: CMakeFiles/5g_ssrc.dir/all
 
 .PHONY : all
 
@@ -82,36 +82,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/single_source.dir/clean
+clean: CMakeFiles/5g_ssrc.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/single_source.dir
+# Target rules for target CMakeFiles/5g_ssrc.dir
 
 # All Build rule for target.
-CMakeFiles/single_source.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/single_source.dir/build.make CMakeFiles/single_source.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/single_source.dir/build.make CMakeFiles/single_source.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hongdayu/single_source/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target single_source"
-.PHONY : CMakeFiles/single_source.dir/all
+CMakeFiles/5g_ssrc.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/5g_ssrc.dir/build.make CMakeFiles/5g_ssrc.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/5g_ssrc.dir/build.make CMakeFiles/5g_ssrc.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hongdayu/single_source/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target 5g_ssrc"
+.PHONY : CMakeFiles/5g_ssrc.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/single_source.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hongdayu/single_source/cmake-build-debug/CMakeFiles 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/single_source.dir/all
+CMakeFiles/5g_ssrc.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hongdayu/single_source/cmake-build-debug/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/5g_ssrc.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hongdayu/single_source/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/single_source.dir/rule
+.PHONY : CMakeFiles/5g_ssrc.dir/rule
 
 # Convenience name for target.
-single_source: CMakeFiles/single_source.dir/rule
+5g_ssrc: CMakeFiles/5g_ssrc.dir/rule
 
-.PHONY : single_source
+.PHONY : 5g_ssrc
 
 # clean rule for target.
-CMakeFiles/single_source.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/single_source.dir/build.make CMakeFiles/single_source.dir/clean
-.PHONY : CMakeFiles/single_source.dir/clean
+CMakeFiles/5g_ssrc.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/5g_ssrc.dir/build.make CMakeFiles/5g_ssrc.dir/clean
+.PHONY : CMakeFiles/5g_ssrc.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

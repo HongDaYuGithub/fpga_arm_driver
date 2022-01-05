@@ -37,8 +37,8 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/hongdayu/single_source/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="single_source">
-				<Option output="/home/hongdayu/single_source/cmake-build-debug/single_source" prefix_auto="0" extension_auto="0"/>
+			<Target title="5g_ssrc">
+				<Option output="/home/hongdayu/single_source/cmake-build-debug/5g_ssrc" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/hongdayu/single_source/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -52,14 +52,14 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/hongdayu/single_source/cmake-build-debug/Makefile&quot;  VERBOSE=1 single_source"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/hongdayu/single_source/cmake-build-debug/Makefile&quot;  VERBOSE=1 5g_ssrc"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/hongdayu/single_source/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/hongdayu/single_source/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/hongdayu/single_source/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="single_source/fast">
-				<Option output="/home/hongdayu/single_source/cmake-build-debug/single_source" prefix_auto="0" extension_auto="0"/>
+			<Target title="5g_ssrc/fast">
+				<Option output="/home/hongdayu/single_source/cmake-build-debug/5g_ssrc" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/hongdayu/single_source/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -73,36 +73,33 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/hongdayu/single_source/cmake-build-debug/Makefile&quot;  VERBOSE=1 single_source/fast"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/hongdayu/single_source/cmake-build-debug/Makefile&quot;  VERBOSE=1 5g_ssrc/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/hongdayu/single_source/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/hongdayu/single_source/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/hongdayu/single_source/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/hongdayu/single_source/fpga/7035/zynq7035.cpp">
-			<Option target="single_source"/>
-		</Unit>
-		<Unit filename="/home/hongdayu/single_source/fpga/7035/zynq7035.h">
-			<Option target="single_source"/>
-		</Unit>
-		<Unit filename="/home/hongdayu/single_source/fpga/Fpga.cpp">
-			<Option target="single_source"/>
-		</Unit>
-		<Unit filename="/home/hongdayu/single_source/fpga/Fpga.h">
-			<Option target="single_source"/>
+		<Unit filename="/home/hongdayu/single_source/Fpga.h">
+			<Option target="5g_ssrc"/>
 		</Unit>
 		<Unit filename="/home/hongdayu/single_source/ftp.cpp">
-			<Option target="single_source"/>
+			<Option target="5g_ssrc"/>
 		</Unit>
 		<Unit filename="/home/hongdayu/single_source/libftp/ftplib.cpp">
-			<Option target="single_source"/>
+			<Option target="5g_ssrc"/>
 		</Unit>
 		<Unit filename="/home/hongdayu/single_source/libftp/ftplib.h">
-			<Option target="single_source"/>
+			<Option target="5g_ssrc"/>
 		</Unit>
 		<Unit filename="/home/hongdayu/single_source/main.cpp">
-			<Option target="single_source"/>
+			<Option target="5g_ssrc"/>
+		</Unit>
+		<Unit filename="/home/hongdayu/single_source/zynq7035.cpp">
+			<Option target="5g_ssrc"/>
+		</Unit>
+		<Unit filename="/home/hongdayu/single_source/zynq7035.h">
+			<Option target="5g_ssrc"/>
 		</Unit>
 		<Unit filename="/home/hongdayu/single_source/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

@@ -1,0 +1,1 @@
+/usr/bin/arm-linux-gnueabi-g++ -static -DNOSSL -g CMakeFiles/5g_ssrc.dir/main.cpp.o CMakeFiles/5g_ssrc.dir/libftp/ftplib.cpp.o CMakeFiles/5g_ssrc.dir/zynq7035.cpp.o CMakeFiles/5g_ssrc.dir/ftp.cpp.o -o 5g_ssrc 
