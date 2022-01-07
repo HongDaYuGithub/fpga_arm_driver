@@ -9,6 +9,8 @@
 
 using namespace FPGA_X32;
 
+//相当于使用两个dma控制器 dma1 sg 的发送模式用于发送 dma0 sample 的接受模式 用于接受使用
+
 enum ZynqSampleDmaReg{
     S2MM_PHY_PERE_REG= 0x40400048,
     S2MM_PERE_LENTH_REG = 0x40400058,
@@ -23,11 +25,16 @@ enum ZynqSampleDmaReg{
 enum ZynqSgDmaReg{
     COMMON_FPGA_BASEADDR = 0x43c10000,
     XILINX_DMA_NUM_APP_WORDS = 0x5,
-    SG_S2MM_CTR_REG= 0x40400030,
+    SG_S2MM_CTR_REG= 0x40410030,
     SG_RESET_DMA_CHANNEL = 0x4,
     SG_S2MM_DMCR_SET = 0x17003,             //  选中使用SG_S2MM_Cyclic 功能
-    SG_S2MM_CURDESC_REG = 0x40400038,       //  SG BD phy addr with current
-    SG_S2MM_TAILDESC = 0x40400040           //  SG BD phy addr with tail for example is tail
+    SG_S2MM_CURDESC_REG = 0x40410038,       //  SG BD phy addr with current
+    SG_S2MM_TAILDESC = 0x40410040, //  SG BD phy addr with tail for example is tail
+    // MM2S REG CTRL
+    SG_MM2S_DMACR = 0x40410000,
+    SG_MM2S_CURDESC = 0x40410004,
+    SG_MM2S_TAILDESC = 0x40410010,
+    SG_MM2S_DMCR_SET = 0x17013,
 };
 
 #define __ALIGNED(x) __attribute__ ((aligned (x)))
@@ -53,6 +60,13 @@ enum DMA_SG_BD_ALIGNED{
 // 最简单的版本只有一个 buffer descriptor
 // 分配一个BD所使用的文件描述符
 
+enum AXI_DMA_MODE{
+    DIRECT_DMA_MODE = 0x1,
+    SG_DMA_MODE = 0x2,
+    RO_MODE = 0x4,
+    WO_MODE = 0x8
+};
+
 class Zynq7035:public Fpga,public FpgaDma{
     private:
         int32_t fd;
@@ -68,11 +82,11 @@ class Zynq7035:public Fpga,public FpgaDma{
         uint32_t *virtual_sg_desc_addr;
         uint32_t phy_sg_desc_addr;
         uint32_t phy_sg_desc_buf_addr;
-        bool set_phy_flags = false;
-        bool set_dma_type = false; //对两种的操作模式进行互斥
+        uint8_t dma_mode_mask;
     public:
         Zynq7035(){}
         Zynq7035(uint32_t addr,int32_t _size);
+        void init_zynq7035(uint8_t _dma_mode_mask);
         void init_sample_dma(uint32_t dst,uint32_t src,int32_t size);
         void init_sg_dma(uint32_t dst,uint32_t src,int32_t size);
         uint32_t* sg_bd_alloc(DMA_SG_BD_ALIGNED type);
@@ -80,8 +94,10 @@ class Zynq7035:public Fpga,public FpgaDma{
         virtual void read(uint32_t offset,uint32_t &value);
         virtual void write(uint32_t offset,uint32_t value);
         virtual void set_phy_addr(uint32_t addr,int32_t _size);
-        virtual void write2slave(std::vector<uint32_t> buf);
-        virtual void read2slave(std::vector<uint32_t> buf);
+        virtual void write2slave(std::vector<uint32_t> buf);    //常规模式下的测试接口
+        virtual void read2slave(std::vector<uint32_t> buf);     //常规模式下的测试接口
+        void dmaread_sample(char* buf,uint32_t length); //简单模式的发送
+        void dmawrite_sg(char* buf,uint32_t length);    //sg 模式下的发送
        ~Zynq7035();
 };
 
