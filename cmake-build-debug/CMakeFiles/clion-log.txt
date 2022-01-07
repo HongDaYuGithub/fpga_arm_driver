@@ -1,4 +1,4 @@
-/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/usr/bin/make -DCMAKE_C_COMPILER=/usr/bin/arm-linux-gnueabi-gcc -DCMAKE_CXX_COMPILER=/usr/bin/arm-linux-gnueabi-g++ -G "CodeBlocks - Unix Makefiles" /home/hongdayu/single_source
--- Configuring done
--- Generating done
--- Build files have been written to: /home/hongdayu/single_source/cmake-build-debug
+找不到 CMake 可执行文件: /usr/bin/cmake 配置 禁用配置文件
+
+无法获取编译器信息:
+	无法创建临时文件

@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hongdayu/single_source/Fpga.h
+cstdint
+-
+vector
+-
+
+/home/hongdayu/single_source/zynq7035.cpp
+cstring
+-
+zynq7035.h
+/home/hongdayu/single_source/zynq7035.h
+cstdio
+-
+cstdlib
+-
+unistd.h
+-
+cstring
+-
+errno.h
+-
+sys/mman.h
+-
+fcntl.h
+-
+unistd.h
+-
+vector
+-
+
+/home/hongdayu/single_source/zynq7035.h
+Fpga.h
+/home/hongdayu/single_source/Fpga.h
+

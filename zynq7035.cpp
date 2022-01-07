@@ -18,7 +18,7 @@
             __LINE__, __FILE__, errno, strerror(errno)); exit(1); } while(0)
 
 template<class T>
-T *phy_mem_alloc(int32_t& fd,uint32_t phyaddr, int32_t size) {
+T *phy_mem_alloc(int32_t& fd,uint32_t phyaddr, int32_t& size) {
     void *map_base, *virt_addr;
     char dev_name[] = "/dev/mem";
     unsigned page_size, mapped_size, offset_in_page;
@@ -37,6 +37,7 @@ T *phy_mem_alloc(int32_t& fd,uint32_t phyaddr, int32_t size) {
         mapped_size *= 2;
     }
 
+    mapped_size = size; //将实际的长度同时进行返回使用
     map_base = mmap(NULL, mapped_size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, target & ~(off_t) (page_size - 1));
 
     virt_addr = (char *) map_base + offset_in_page;
@@ -181,10 +182,10 @@ void Zynq7035::init_sg_dma(uint32_t dst,uint32_t src,int32_t size) { //目前 si
     dma_size = size;
     uint32_t SG_DESCRIPT_BUFFER_CONCTRL_REG = 0x03000000;
     std::vector<std::pair<uint32_t,uint32_t>> set_dma = {
-            std::make_pair(SG_S2MM_CTR_REG,SG_RESET_DMA_CHANNEL),
-            std::make_pair(SG_S2MM_CTR_REG,SG_S2MM_DMCR_SET),
-            std::make_pair(SG_S2MM_CURDESC_REG,src<<5),                                            //地址相接使用
-            std::make_pair(SG_S2MM_TAILDESC,src<<5)                                                //目前只使用一个dma地址
+            std::make_pair(SG_MM2S_DMACR,SG_RESET_DMA_CHANNEL),
+            std::make_pair(SG_MM2S_DMACR,SG_MM2S_DMCR_SET),
+            std::make_pair(SG_MM2S_CURDESC,src<<5),                                            //地址相接使用
+            std::make_pair(SG_MM2S_TAILDESC,src<<5)                                                //目前只使用一个dma地址
     };
 
     mem_write(set_dma); //寄存器地址写入
@@ -196,8 +197,9 @@ void Zynq7035::init_sg_dma(uint32_t dst,uint32_t src,int32_t size) { //目前 si
 
     SG_DESCRIPT_BUFFER_CONCTRL_REG |= dma_size; //FIXME: dma size 需要限制到 26 bit
 
+    memset(virtual_sg_desc_addr,0x5A,dma_size); //FIXME: 对地址空间进行初始化,查看是否被修改
     xilinx_axidma_desc_hw first_bd = {
-            .next_desc = phy_sg_desc_addr<<5, //FIXME: 需要对小地址做出检验
+            .next_desc = phy_sg_desc_addr<<5, //FIXME: 需要对小地址做出检验,需要为文件开辟文件大小
             .next_desc_msb = 0x0,
             .buf_addr = phy_sg_desc_buf_addr,
             .buf_addr_msb = 0x0,
@@ -212,6 +214,10 @@ void Zynq7035::init_sg_dma(uint32_t dst,uint32_t src,int32_t size) { //目前 si
 
 void Zynq7035::write2slave(std::vector<uint32_t> buf) {
     printf("No Use, Please empty\n");
+}
+
+void Zynq7035::dmawrite(char *buf,uint32_t length) {
+    memcpy(virtual_dma_src,buf,length); //将数据copy 到 data buffer 中去
 }
 
 void Zynq7035::read2slave(std::vector<uint32_t> buf) {

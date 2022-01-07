@@ -86,6 +86,9 @@
 		<Unit filename="/home/hongdayu/single_source/ftp.cpp">
 			<Option target="5g_ssrc"/>
 		</Unit>
+		<Unit filename="/home/hongdayu/single_source/ftp.h">
+			<Option target="5g_ssrc"/>
+		</Unit>
 		<Unit filename="/home/hongdayu/single_source/libftp/ftplib.cpp">
 			<Option target="5g_ssrc"/>
 		</Unit>
