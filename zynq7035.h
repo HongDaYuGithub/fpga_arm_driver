@@ -60,6 +60,13 @@ enum DMA_SG_BD_ALIGNED{
 // 最简单的版本只有一个 buffer descriptor
 // 分配一个BD所使用的文件描述符
 
+enum AXI_DMA_MODE{
+    DIRECT_DMA_MODE = 0x1,
+    SG_DMA_MODE = 0x2,
+    RO_MODE = 0x4,
+    WO_MODE = 0x8
+};
+
 class Zynq7035:public Fpga,public FpgaDma{
     private:
         int32_t fd;
@@ -75,11 +82,11 @@ class Zynq7035:public Fpga,public FpgaDma{
         uint32_t *virtual_sg_desc_addr;
         uint32_t phy_sg_desc_addr;
         uint32_t phy_sg_desc_buf_addr;
-        bool set_phy_flags = false; //TODO: 互斥关系操作
-        bool set_dma_type = false; //TODO: 对两种的操作模式进行互斥
+        uint8_t dma_mode_mask;
     public:
         Zynq7035(){}
         Zynq7035(uint32_t addr,int32_t _size);
+        void init_zynq7035(uint8_t _dma_mode_mask);
         void init_sample_dma(uint32_t dst,uint32_t src,int32_t size);
         void init_sg_dma(uint32_t dst,uint32_t src,int32_t size);
         uint32_t* sg_bd_alloc(DMA_SG_BD_ALIGNED type);
@@ -87,9 +94,10 @@ class Zynq7035:public Fpga,public FpgaDma{
         virtual void read(uint32_t offset,uint32_t &value);
         virtual void write(uint32_t offset,uint32_t value);
         virtual void set_phy_addr(uint32_t addr,int32_t _size);
-        virtual void write2slave(std::vector<uint32_t> buf);
-        virtual void read2slave(std::vector<uint32_t> buf);
-        void dmawrite(char* buf,uint32_t length);
+        virtual void write2slave(std::vector<uint32_t> buf);    //常规模式下的测试接口
+        virtual void read2slave(std::vector<uint32_t> buf);     //常规模式下的测试接口
+        void dmaread_sample(char* buf,uint32_t length); //简单模式的发送
+        void dmawrite_sg(char* buf,uint32_t length);    //sg 模式下的发送
        ~Zynq7035();
 };
 

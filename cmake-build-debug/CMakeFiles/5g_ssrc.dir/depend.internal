@@ -3,11 +3,15 @@
 
 CMakeFiles/5g_ssrc.dir/ftp.cpp.o
  /home/hongdayu/single_source/ftp.cpp
+ /home/hongdayu/single_source/ftp.h
+ /home/hongdayu/single_source/libftp/ftplib.h
 CMakeFiles/5g_ssrc.dir/libftp/ftplib.cpp.o
  /home/hongdayu/single_source/libftp/ftplib.cpp
  /home/hongdayu/single_source/libftp/ftplib.h
 CMakeFiles/5g_ssrc.dir/main.cpp.o
  /home/hongdayu/single_source/Fpga.h
+ /home/hongdayu/single_source/ftp.h
+ /home/hongdayu/single_source/libftp/ftplib.h
  /home/hongdayu/single_source/main.cpp
  /home/hongdayu/single_source/zynq7035.h
 CMakeFiles/5g_ssrc.dir/zynq7035.cpp.o

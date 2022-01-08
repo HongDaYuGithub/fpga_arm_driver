@@ -7,11 +7,9 @@
 #include <cstdio>
 #include <cstdlib>
 #include <unistd.h>
-#include <cstring>
 #include <errno.h>
 #include <sys/mman.h>
 #include <fcntl.h>
-#include <unistd.h>
 #include <vector>
 
 #define FATAL do { fprintf(stderr, "Error at line %d, file %s (%d) [%s]\n", \
@@ -158,7 +156,6 @@ void Zynq7035::set_phy_addr(uint32_t addr,int32_t _size){
 }
 
 void Zynq7035::init_sample_dma(uint32_t dst, uint32_t src, int32_t size) {
-    set_dma_type = true;
     dma_dst = dst;
     dma_src = src;
     dma_size = size;
@@ -175,7 +172,6 @@ void Zynq7035::init_sample_dma(uint32_t dst, uint32_t src, int32_t size) {
 
 //Zynq Axi Dma desc
 void Zynq7035::init_sg_dma(uint32_t dst,uint32_t src,int32_t size) { //目前 size 不会使用
-    set_dma_type = false;
     // dma dst 没有使用
     dma_dst = dst;
     dma_src = src;
@@ -216,10 +212,15 @@ void Zynq7035::write2slave(std::vector<uint32_t> buf) {
     printf("No Use, Please empty\n");
 }
 
-void Zynq7035::dmawrite(char *buf,uint32_t length) {
+void Zynq7035::dmawrite_sg(char *buf,uint32_t length) {
+    if(!(dma_mode_mask&AXI_DMA_MODE::SG_DMA_MODE)){
+        printf("SG_DMA_MODE Error\n");  //如果模式错误就无法使用SG DMA MODE
+        return;
+    }
     memcpy(virtual_dma_src,buf,length); //将数据copy 到 data buffer 中去
 }
 
+//这个是之前预留的测试接口现在不在使用了,但是以后测试还得使用
 void Zynq7035::read2slave(std::vector<uint32_t> buf) {
         if(virtual_sg_desc_addr != nullptr) {
             xilinx_axidma_desc_hw rx_dma;
@@ -232,6 +233,40 @@ void Zynq7035::read2slave(std::vector<uint32_t> buf) {
                 printf("\n");
             }
         }
+}
+
+void Zynq7035::init_zynq7035(uint8_t _dma_mode_mask) {
+
+    switch(_dma_mode_mask&(DIRECT_DMA_MODE|SG_DMA_MODE)){
+        case DIRECT_DMA_MODE :
+            this->init_sample_dma(0,dma_src,dma_size);
+            break;
+        case SG_DMA_MODE:
+            this->init_sg_dma(0,dma_src,dma_size);
+            break;
+        case 0x3:
+            this->init_sample_dma(0,dma_src,dma_size);
+            this->init_sg_dma(0,dma_src,dma_size);
+            break;
+        default:
+            printf("Init Zynq7035 Dma error ... ...\n");
+            exit(1);
+    }
+}
+
+//如果同时有两个,两个同时都可以进行初始化,userspace 下的测试模式
+void Zynq7035::dmaread_sample(char *buf, uint32_t length) {
+    if(!(dma_mode_mask&AXI_DMA_MODE::DIRECT_DMA_MODE)){
+        printf("Not Use DIRECT DMA MODE\n");
+        return;
+    }
+
+    if(length < dma_size){
+        printf("buffer lenth not enough for dma read \n");
+        return;
+    }
+
+    memcpy(buf,virtual_dma_src,dma_size); //copy data
 }
 
 Zynq7035::~Zynq7035() {

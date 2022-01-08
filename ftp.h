@@ -12,6 +12,9 @@ struct Ftp{
     std::string login_name;
     std::string login_password;
     std::string ftp_addr; // ip+port
+    Ftp(){}
+    Ftp(std::string f,std::string ln,std::string lp,std::string fa):filename(f), \
+    login_name(ln),login_password(lp),ftp_addr(fa){}
+    int32_t ftp_get(char* buf,uint32_t size); //ftp 下载功能
 };
-int32_t ftp_get(Ftp ftp,char* buf,uint32_t& size);
 #endif //SINGLE_SOURCE_FTP_H
